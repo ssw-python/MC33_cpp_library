@@ -6,7 +6,7 @@
 	This library is the C++ version of the library described in the paper:
 	Vega, D., Abache, J., Coll, D., A Fast and Memory Saving Marching Cubes 33
 	implementation with the correct interior test, Journal of Computer Graphics
-	Techniques (JCGT), vol. 8, no. 3, 1–17, 2019.
+	Techniques (JCGT), vol. 8, no. 3, 1?7, 2019.
 */
 
 #ifndef MC33_h_
@@ -147,7 +147,7 @@ public:
 //Generates an orthogonal grid from a function fn(x,y,z). xi and xf are the
 //limits of the interval along the x axis, yi and yf along the y axis and zi
 //and zf along the z axis. dx, dy and dz are the respective step sizes.
-	int generate_grid_from_fn(double xi, double yi, double zi, double xf, double yf, double zf, double dx, double dy, double dz, double (*fn)(double x, double y, double z));
+	int generate_grid_from_fn(double xi, double yi, double zi, double xf, double yf, double zf, double dx, double dy, double dz, std::function<double(double, double, double)> fn);
 //Get a grid point value
 	GRD_data_type get_grid_value(unsigned int i, unsigned int j, unsigned int k);
 //Calculate a value at position (x, y, z) by interpolating the grid values.

@@ -478,7 +478,7 @@ int grid3d::add_subgrid(unsigned int Oi, unsigned int Oj, unsigned int Ok,
 	return 0;
 }
 
-int grid3d::generate_grid_from_fn(double xi, double yi, double zi, double xf, double yf, double zf, double dx, double dy, double dz, double (*fn)(double x, double y, double z)) {
+int grid3d::generate_grid_from_fn(double xi, double yi, double zi, double xf, double yf, double zf, double dx, double dy, double dz, std::function<double(double, double, double)> fn) {
 	free_F();
 	if (dx <= 0 || dy <= 0 || dz <= 0 || xi == xf || yi == yf || zi == zf) {
 		N[0] = N[1] = N[2] = 0;
