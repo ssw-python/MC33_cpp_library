@@ -1,0 +1,12 @@
+﻿cmake_minimum_required(VERSION 3.12)
+
+project(MC33)
+set(PROJECT_NAME MC33)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_library(${PROJECT_NAME} STATIC source/libMC33++.cpp)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
